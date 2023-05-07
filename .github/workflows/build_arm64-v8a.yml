@@ -61,7 +61,7 @@ jobs:
           echo "::set-output name=release_tag::${{env.OPENSSL_VERSION}}"
           echo "::set-output name=status::success"
 
-      - name: Upload firmware to release
+      - name: Upload packages to release
         if: steps.tag.outputs.status == 'success' && !cancelled()
         uses: softprops/action-gh-release@v1
         env:
